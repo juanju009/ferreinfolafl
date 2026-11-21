@@ -12,8 +12,8 @@ $SITE = [
   'brand'       => 'Guía del Cliente Ferretero',          // nombre comercial de ESTA guía
   'brand_note'  => 'Guía educativa independiente',
   'lang'        => 'es-NI',
-  'title'       => 'Guía de orientación sobre el buen uso de Ferretería LAFISE en Nicaragua',
-  'description' => 'Guía educativa e independiente para clientes: cómo usar de forma ordenada los servicios de Ferretería LAFISE en Nicaragua. No somos un banco ni recibimos pagos.',
+  'title'       => 'Guía de orientación para comprar en ferretería de forma ordenada | Nicaragua · LAFISE',
+  'description' => 'Guía educativa e independiente para clientes: cómo preparar su compra en ferretería, leer una proforma y guardar sus comprobantes en Nicaragua. No somos un banco ni recibimos pagos.',
   'canonical'   => '',                                    // URL real de la página; vacío = no se imprime
 
   // --- Colores (variables CSS) ---
@@ -49,7 +49,7 @@ $SITE = [
 
 /* ---------- Contenido (edite textos sin tocar el HTML) ---------- */
 $buenas_practicas = [
-  ['Use los canales de atención de la ferretería', 'Para comprar, cotizar o consultar, comuníquese directamente con Ferretería LAFISE. Esta guía no sustituye esos canales.'],
+  ['Use los canales de atención de la ferretería', 'Para comprar, cotizar o consultar, comuníquese directamente con la ferretería. Esta guía no sustituye esos canales.'],
   ['Pregunte por las condiciones por escrito', 'Precios, disponibilidad, garantías, entregas y formas de pago deben confirmarse directamente con la ferretería y quedar en una proforma o factura.'],
   ['Guarde sus comprobantes', 'Conserve facturas, recibos y proformas. Son su respaldo para cambios, garantías o reclamos.'],
   ['Compare la proforma con el pedido', 'Revise cantidades, medidas, marcas y totales antes de aceptar o retirar los materiales.'],
@@ -59,7 +59,7 @@ $buenas_practicas = [
 
 $pasos = [
   ['Defina qué necesita', 'Anote materiales, medidas y cantidades. Una lista clara evita compras repetidas o faltantes.'],
-  ['Contacte a la ferretería', 'Comuníquese con Ferretería LAFISE por sus canales de atención y pida disponibilidad y una proforma.'],
+  ['Contacte a la ferretería', 'Comuníquese con la ferretería por sus canales de atención y pida disponibilidad y una proforma.'],
   ['Revise la proforma', 'Confirme productos, precios, impuestos y condiciones de entrega o retiro.'],
   ['Realice su pago directamente con la ferretería', 'Los pagos se hacen directamente con la ferretería, siguiendo las indicaciones que ellos le den. Esta guía no recibe pagos.'],
   ['Verifique y conserve el comprobante', 'Al recibir o retirar, compare con la factura y guarde todos los documentos.'],
@@ -126,10 +126,10 @@ $glosario = [
 ];
 
 $faq = [
-  ['¿Para qué sirve esta guía?', 'Para orientarle sobre cómo preparar y organizar su compra o consulta en Ferretería LAFISE: qué preguntar, qué documentos guardar y qué revisar antes de aceptar un pedido.'],
-  ['¿Esta página es del banco LAFISE o de Ferretería LAFISE?', 'No. Esta es una guía educativa de orientación independiente. No somos Banco LAFISE, no somos un banco y no somos la ferretería. No existe afiliación, patrocinio ni autorización de LAFISE, salvo que se indique expresamente lo contrario en esta página.'],
+  ['¿Para qué sirve esta guía?', 'Para orientarle sobre cómo preparar y organizar su compra o consulta en ferretería: qué preguntar, qué documentos guardar y qué revisar antes de aceptar un pedido.'],
+  ['¿Esta página es del banco LAFISE o de Ferretería LAFISE?', 'No. Esta es una guía educativa de orientación independiente. No somos un banco, no somos la ferretería y no existe afiliación, patrocinio ni autorización de ninguna de esas entidades.'],
   ['¿Puedo pagar o hacer una transferencia a través de esta página?', 'No. No recibimos pagos, transferencias bancarias ni dinero de ningún tipo.'],
-  ['¿Puedo hacer pedidos o compras aquí?', 'No. Para comprar, cotizar o reclamar debe comunicarse directamente con Ferretería LAFISE.'],
+  ['¿Puedo hacer pedidos o compras aquí?', 'No. Para comprar, cotizar o reclamar debe comunicarse directamente con la ferretería.'],
   ['¿Dónde encuentro los datos de atención de la ferretería?', 'En los medios de atención de la propia empresa. Esta guía no los administra.'],
   ['¿Cómo se usa mi información si contacto a esta guía?', 'PENDIENTE: el responsable debe completar este texto según su política de privacidad real antes de publicar.'],
 ];
@@ -298,7 +298,7 @@ footer h2{color:var(--white);font-size:1.1rem}
 <body>
 
 <div class="notice" role="note">
-  <div class="wrap"><strong>Aviso:</strong> Esta es una guía educativa de orientación independiente. No somos Banco LAFISE ni un banco, y no recibimos pagos ni transferencias.</div>
+  <div class="wrap"><strong>Aviso:</strong> Esta es una guía educativa de orientación independiente. No somos un banco ni una ferretería, y no recibimos pagos ni transferencias.</div>
 </div>
 
 <header class="site-header">
@@ -337,8 +337,8 @@ footer h2{color:var(--white);font-size:1.1rem}
     <div class="wrap">
       <div>
         <span class="tag">Guía educativa · Nicaragua</span>
-        <h1 id="h1">Cómo usar Ferretería LAFISE de forma ordenada y sencilla</h1>
-        <p class="lead">Una guía de orientación para que compre, consulte y conserve sus documentos con orden. Le explicamos buenas prácticas de uso paso a paso.</p>
+        <h1 id="h1">Cómo comprar en ferretería de forma ordenada y sencilla</h1>
+        <p class="lead">Una guía de orientación para clientes de Ferretería LAFISE en Nicaragua: compre, consulte y conserve sus documentos con orden. Le explicamos buenas prácticas de uso paso a paso.</p>
         <p>Esta página solo educa y orienta. Las compras, pagos y reclamos se realizan directamente con la ferretería.</p>
         <div class="actions">
           <a class="btn btn-primary" href="#buenas-practicas">Leer la guía</a>
@@ -347,7 +347,7 @@ footer h2{color:var(--white);font-size:1.1rem}
       </div>
       <aside class="hero-card" aria-label="Aclaración importante">
         <h2>Lo que esta guía es y lo que no es</h2>
-        <p style="margin:0">Esta guía ofrece contenido educativo y consejos de uso, y orienta sobre cómo acudir a Ferretería LAFISE. <strong>No somos Banco LAFISE Nicaragua</strong> ni un banco, <strong>no recibimos ni hacemos pagos o transferencias</strong>, y <strong>nunca pedimos claves, PIN, tarjetas ni datos bancarios</strong>.</p>
+        <p style="margin:0">Esta guía ofrece contenido educativo y consejos de uso, y orienta sobre cómo acudir a la ferretería. <strong>No somos un banco ni la ferretería</strong>, <strong>no recibimos ni hacemos pagos o transferencias</strong>, y <strong>nunca pedimos claves, PIN, tarjetas ni datos bancarios</strong>.</p>
       </aside>
     </div>
   </section>
@@ -355,7 +355,7 @@ footer h2{color:var(--white);font-size:1.1rem}
   <section id="aclaracion" class="alt" aria-labelledby="h-acl">
     <div class="wrap">
       <h2 id="h-acl">Qué es esta guía</h2>
-      <p>Esta es una guía educativa independiente que orienta sobre el buen uso de Ferretería LAFISE en Nicaragua: cómo preparar su compra, qué conviene preguntar y qué documentos guardar. No somos Banco LAFISE ni un banco, no somos la ferretería, no tenemos afiliación ni autorización de LAFISE, no recibimos ni hacemos pagos o transferencias, y no procesamos compras, pedidos ni reclamos; para eso debe comunicarse directamente con Ferretería LAFISE.</p>
+      <p>Esta es una guía educativa independiente que orienta sobre cómo comprar en ferretería de forma ordenada en Nicaragua: cómo preparar su compra, qué conviene preguntar y qué documentos guardar. No somos un banco ni la ferretería, no tenemos afiliación ni autorización de ninguna empresa, no recibimos ni hacemos pagos o transferencias, y no procesamos compras, pedidos ni reclamos; para eso debe comunicarse directamente con la ferretería.</p>
     </div>
   </section>
 
@@ -450,7 +450,7 @@ footer h2{color:var(--white);font-size:1.1rem}
   <section id="contacto" class="alt" aria-labelledby="h-ct">
     <div class="wrap">
       <h2 id="h-ct">Contacto de esta guía</h2>
-      <p>Para dudas sobre el contenido de esta guía. Para compras, pagos o reclamos, comuníquese con Ferretería LAFISE.</p>
+      <p>Para dudas sobre el contenido de esta guía. Para compras, pagos o reclamos, comuníquese con la ferretería.</p>
       <?php if ($SITE['contact_email'] || $SITE['contact_phone']): ?>
         <div class="actions">
           <?php if ($SITE['contact_email']): ?><a class="btn btn-secondary" href="mailto:<?= e($SITE['contact_email']) ?>">Escribir por correo</a><?php endif; ?>
