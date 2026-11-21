@@ -1,0 +1,448 @@
+<?php
+/* =====================================================================
+   GUÍA DE ORIENTACIÓN — BUEN USO DE FERRETERÍA LAFISE (NICARAGUA)
+   Archivo único: index.php. Requiere PHP 7.4+.
+   Edite SOLO el bloque $SITE. Todo valor "PENDIENTE" debe completarse
+   con información verificada antes de publicar. Nada aquí es oficial
+   de LAFISE: es una guía informativa independiente.
+   ===================================================================== */
+
+$SITE = [
+  // --- Identidad (cámbiela por el nombre real de su proyecto) ---
+  'brand'       => 'Guía del Cliente Ferretero',          // nombre comercial de ESTA guía
+  'brand_note'  => 'Orientación independiente',
+  'lang'        => 'es-NI',
+  'title'       => 'Guía de orientación sobre el buen uso de Ferretería LAFISE en Nicaragua',
+  'description' => 'Guía educativa e independiente para clientes: cómo usar de forma segura y ordenada los servicios de Ferretería LAFISE en Nicaragua. No somos un banco ni recibimos pagos.',
+  'canonical'   => '',                                    // URL real de la página; vacío = no se imprime
+
+  // --- Colores (variables CSS) ---
+  'colors' => [
+    'ink' => '#14212B', 'steel' => '#1F3A4D', 'steel2' => '#2E5670',
+    'safety' => '#F2B705', 'paper' => '#F3F5F6', 'white' => '#FFFFFF',
+    'line' => '#D3DADF', 'alert' => '#A61E1E', 'alertbg' => '#FDEEEE',
+  ],
+
+  // --- Contacto de ESTA guía (no de LAFISE). PENDIENTE: completar con datos reales ---
+  'contact_email'  => '',   // PENDIENTE
+  'contact_phone'  => '',   // PENDIENTE
+
+  // --- Responsable de la guía (legal). PENDIENTE: completar ---
+  'owner_name'     => 'ALDRUBAL MORALES MARIN',
+  'legal_links'    => [    // ['texto' => 'url']. Solo agregue enlaces que existan.
+    // 'Política de privacidad' => '/privacidad.php',
+  ],
+
+  // --- Datos del anunciante / patrocinador (se muestran bajo el encabezado) ---
+  'sponsor_name'   => 'ALDRUBAL MORALES MARIN',
+  'sponsor_id_label' => 'Cédula',
+  'sponsor_id'     => '1.040.734.149',
+  'sponsor_note'   => 'Contenido educativo independiente',
+
+  // --- Medición con Google Ads (solo se carga si el visitante pulsa ACEPTAR) ---
+  'ads_id'         => '',   // PENDIENTE: su ID de Google Ads (formato AW-XXXXXXXXX). Vacío = no se carga nada.
+  // Mientras 'ads_id' esté vacío, el banner solo sirve de vista previa (no carga ni guarda cookies de Google).
+  // Ponga false para publicar: así el banner no aparecerá si no hay medición real.
+  'banner_preview' => true,
+];
+
+/* ---------- Contenido (edite textos sin tocar el HTML) ---------- */
+$buenas_practicas = [
+  ['Use solo canales oficiales', 'Antes de comprar, consultar o pagar, confirme la tienda, la web o el teléfono en los canales oficiales de Ferretería LAFISE. Esta guía no sustituye esos canales.'],
+  ['Pregunte por condiciones por escrito', 'Precios, disponibilidad, garantías, entregas y formas de pago deben confirmarse directamente con la ferretería y quedar en una proforma o factura.'],
+  ['Guarde sus comprobantes', 'Conserve facturas, recibos y proformas. Son su respaldo para cambios, garantías o reclamos.'],
+  ['Compare la proforma con el pedido', 'Revise cantidades, medidas, marcas y totales antes de aceptar o retirar los materiales.'],
+  ['Proteja sus datos personales', 'No comparta contraseñas, códigos de verificación ni datos completos de tarjetas con nadie, incluida esta guía.'],
+  ['Consulte dudas antes de comprar', 'Si no sabe qué material necesita, pida orientación técnica a la ferretería y verifique la recomendación.'],
+];
+
+$pasos = [
+  ['Defina qué necesita', 'Anote materiales, medidas y cantidades. Una lista clara evita compras repetidas o faltantes.'],
+  ['Contacte a la ferretería por un canal oficial', 'Pida disponibilidad y una proforma. Verifique que el contacto sea el oficial.'],
+  ['Revise la proforma', 'Confirme productos, precios, impuestos y condiciones de entrega o retiro.'],
+  ['Pague solo a la ferretería', 'Realice pagos únicamente mediante los medios que la propia ferretería le indique por canales oficiales, nunca a terceros.'],
+  ['Verifique y conserve el comprobante', 'Al recibir o retirar, compare con la factura y guarde todos los documentos.'],
+];
+
+$hacemos = [
+  ['Explicar buenas prácticas de compra y uso', true],
+  ['Orientar sobre cómo verificar canales oficiales', true],
+  ['Informar sobre señales de posible fraude', true],
+  ['Recibir pagos o transferencias bancarias', false],
+  ['Procesar compras, pedidos o reclamos', false],
+  ['Representar o hablar en nombre de LAFISE', false],
+];
+
+$alertas = [
+  'Le piden pagar o transferir a una cuenta personal o a un número que no aparece en los canales oficiales.',
+  'Le presionan con "últimas unidades" u ofertas que vencen en minutos.',
+  'Le solicitan claves, PIN o códigos que llegan por mensaje.',
+  'El enlace o perfil no coincide con el sitio oficial, o tiene errores de escritura.',
+  'No quieren entregar factura, proforma o comprobante.',
+];
+
+$faq = [
+  ['¿Esta página es del banco LAFISE o de Ferretería LAFISE?', 'No. Esta es una guía informativa independiente. No somos Banco LAFISE, no somos un banco y no somos la ferretería. No existe afiliación, patrocinio ni autorización de LAFISE, salvo que se indique expresamente lo contrario en esta página.'],
+  ['¿Puedo pagar o hacer una transferencia a través de esta página?', 'No. No recibimos pagos, transferencias bancarias ni dinero de ningún tipo. Si alguien en nombre de esta guía le solicita dinero, no pague y repórtelo.'],
+  ['¿Puedo hacer pedidos o compras aquí?', 'No. Para comprar, cotizar o reclamar debe comunicarse directamente con Ferretería LAFISE por sus canales oficiales.'],
+  ['¿Dónde encuentro los datos oficiales de la ferretería?', 'En el sitio y los medios oficiales de la empresa. Verifique siempre la dirección web antes de ingresar datos.'],
+  ['¿Qué hago si creo que me intentan estafar?', 'Deje de comunicarse, no envíe dinero ni datos, y avise a la empresa por sus canales oficiales y a las autoridades competentes de su localidad.'],
+  ['¿Cómo se usa mi información si contacto a esta guía?', 'PENDIENTE: el responsable debe completar este texto según su política de privacidad real antes de publicar.'],
+];
+
+/* ---------- Utilidades ---------- */
+function e($s) { return htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8'); }
+$c = $SITE['colors'];
+$phone_href = preg_replace('/[^0-9+]/', '', $SITE['contact_phone']);
+?>
+<!DOCTYPE html>
+<html lang="<?= e($SITE['lang']) ?>">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><?= e($SITE['title']) ?></title>
+<meta name="description" content="<?= e($SITE['description']) ?>">
+<meta property="og:title" content="<?= e($SITE['title']) ?>">
+<meta property="og:description" content="<?= e($SITE['description']) ?>">
+<meta property="og:type" content="website">
+<?php if ($SITE['canonical']): ?><link rel="canonical" href="<?= e($SITE['canonical']) ?>"><?php endif; ?>
+<!-- Favicon: PENDIENTE. Agregue <link rel="icon" href="favicon.png"> cuando tenga el archivo. -->
+<style>
+:root{
+  --ink:<?= e($c['ink']) ?>;--steel:<?= e($c['steel']) ?>;--steel2:<?= e($c['steel2']) ?>;
+  --safety:<?= e($c['safety']) ?>;--paper:<?= e($c['paper']) ?>;--white:<?= e($c['white']) ?>;
+  --line:<?= e($c['line']) ?>;--alert:<?= e($c['alert']) ?>;--alertbg:<?= e($c['alertbg']) ?>;
+  --font:"Trebuchet MS","Segoe UI",Tahoma,Verdana,sans-serif;
+  --max:1100px;--r:6px;--t:.18s ease;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{margin:0;font-family:var(--font);color:var(--ink);background:var(--white);line-height:1.6;font-size:17px;overflow-x:hidden}
+img,svg{max-width:100%}
+a{color:var(--steel2)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.15;margin:0 0 .5em;color:var(--steel)}
+h1{font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-.02em}
+h2{font-size:clamp(1.5rem,3.4vw,2.1rem)}
+h3{font-size:1.1rem}
+p{margin:0 0 1em;max-width:68ch}
+:focus-visible{outline:3px solid var(--safety);outline-offset:2px}
+
+/* Aviso permanente */
+.notice{background:var(--ink);color:var(--white);font-size:.9rem;padding:8px 0;text-align:center}
+.notice strong{color:var(--safety)}
+
+/* Encabezado */
+.site-header{position:sticky;top:0;z-index:20;background:var(--white);border-bottom:3px solid var(--safety)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}
+.brand{font-weight:700;color:var(--steel);text-decoration:none;font-size:1.1rem}
+.brand small{display:block;font-weight:400;font-size:.75rem;color:var(--steel2)}
+.nav{display:flex;gap:4px;overflow-x:auto;max-width:100%}
+.nav a{white-space:nowrap;padding:8px 12px;text-decoration:none;color:var(--ink);border-radius:var(--r);font-size:.95rem;transition:background var(--t)}
+.nav a:hover{background:var(--paper)}
+
+/* Botones */
+.btn{display:inline-block;padding:14px 24px;border-radius:var(--r);font-weight:700;text-decoration:none;border:2px solid var(--steel);transition:transform var(--t),background var(--t);min-height:48px}
+.btn-primary{background:var(--steel);color:var(--white)}
+.btn-primary:hover{background:var(--steel2)}
+.btn-secondary{background:transparent;color:var(--steel)}
+.btn-secondary:hover{background:var(--paper)}
+.btn:active{transform:translateY(1px)}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+
+/* Hero */
+.hero{background:var(--paper);padding:56px 0 48px;border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.hero .lead{font-size:1.15rem}
+.tag{display:inline-block;background:var(--safety);color:var(--ink);font-weight:700;padding:4px 12px;border-radius:var(--r);font-size:.85rem;margin-bottom:16px}
+.hero-card{background:var(--white);border:2px solid var(--alert);border-radius:var(--r);padding:22px}
+.hero-card h2{color:var(--alert);font-size:1.25rem}
+.hero-card ul{margin:0;padding-left:20px}
+.hero-card li{margin-bottom:6px}
+
+/* Secciones */
+section{padding:60px 0}
+section.alt{background:var(--paper)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:var(--white);border:1px solid var(--line);border-left:5px solid var(--steel);border-radius:var(--r);padding:20px}
+.card p{margin:0}
+
+/* Pasos (secuencia real) */
+.steps{list-style:none;counter-reset:s;margin:0;padding:0;display:grid;gap:14px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.steps li::before{content:counter(s);background:var(--steel);color:var(--white);font-weight:700;width:44px;height:44px;border-radius:50%;display:grid;place-items:center}
+.steps h3{margin:0 0 4px}.steps p{margin:0}
+
+/* Tabla */
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--white)}
+table{border-collapse:collapse;width:100%;min-width:420px}
+th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:var(--steel);color:var(--white)}
+.yes{color:#1B6B3A;font-weight:700}.no{color:var(--alert);font-weight:700}
+
+/* Alertas */
+.alerts{background:var(--alertbg);border:1px solid var(--alert);border-radius:var(--r);padding:24px}
+.alerts h2{color:var(--alert)}
+.alerts ul{margin:0;padding-left:20px}.alerts li{margin-bottom:8px}
+
+/* FAQ */
+details{background:var(--white);border:1px solid var(--line);border-radius:var(--r);margin-bottom:10px}
+summary{cursor:pointer;padding:16px 48px 16px 18px;font-weight:700;color:var(--steel);list-style:none;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:1.4rem;transition:transform var(--t)}
+details[open] summary::after{content:"\2212"}
+details[open] summary{border-bottom:1px solid var(--line)}
+details .ans{padding:16px 18px 4px}
+
+/* Contacto */
+.pending{background:#FFF8DB;border:1px dashed #A07A00;padding:14px;border-radius:var(--r);font-size:.95rem}
+
+/* Patrocinador */
+.sponsor{background:var(--white);border-bottom:1px solid var(--line)}
+.sponsor .wrap{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;padding-top:14px;padding-bottom:14px}
+.sp-label{font-weight:700;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:#7A5A00;text-align:center}
+.sp-box{display:flex;gap:32px;flex-wrap:wrap;background:#E6F0EF;border:1px solid #C5D9D6;border-left:5px solid var(--safety);border-radius:var(--r);padding:10px 18px}
+.sp-box small{display:block;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:#4C5C66}
+.sp-box strong{font-size:1.05rem;color:var(--ink)}
+.sponsor em{color:#4C5C66;text-align:center;font-size:.95rem}
+@media (max-width:820px){.sponsor .wrap{grid-template-columns:1fr;gap:10px}.sp-box{justify-content:center;gap:20px}}
+
+/* Cookies */
+.cookie{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--ink);color:#E6ECEF;border-top:1px solid #34444F;box-shadow:0 -6px 20px rgba(0,0,0,.25)}
+.cookie[hidden]{display:none}
+.cookie .wrap{display:flex;gap:24px;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px;flex-wrap:wrap}
+.cookie p{margin:0;font-size:.92rem;flex:1 1 380px;max-width:none}
+.cookie a{color:var(--safety)}
+.cookie-actions{display:flex;gap:10px;flex-wrap:wrap}
+.cookie .btn{padding:10px 22px;min-height:44px;font-size:.9rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;font-family:inherit}
+.cookie .btn-reject{background:transparent;color:var(--white);border-color:#6B7B86}
+.cookie .btn-accept{background:var(--safety);color:var(--ink);border-color:var(--safety)}
+.linklike{background:none;border:0;padding:0;color:var(--safety);text-decoration:underline;cursor:pointer;font:inherit}
+body:has(.cookie:not([hidden])){padding-bottom:110px}
+
+/* Pie */
+footer{background:var(--ink);color:#DCE3E8;padding:40px 0;font-size:.95rem}
+footer a{color:var(--safety)}
+footer h2{color:var(--white);font-size:1.1rem}
+.disclaimer{border:2px solid var(--safety);padding:16px;border-radius:var(--r);margin-bottom:24px;color:var(--white)}
+
+@media (max-width:820px){
+  .hero .wrap{grid-template-columns:1fr}
+  section{padding:44px 0}
+  body{font-size:16px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}*{transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<div class="notice" role="note">
+  <div class="wrap"><strong>Aviso:</strong> Esta es una guía informativa independiente. No somos Banco LAFISE ni un banco, y no recibimos pagos ni transferencias.</div>
+</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#inicio"><?= e($SITE['brand']) ?><small><?= e($SITE['brand_note']) ?></small></a>
+    <nav class="nav" aria-label="Secciones de la guía">
+      <a href="#aclaracion">Quiénes somos</a>
+      <a href="#buenas-practicas">Buenas prácticas</a>
+      <a href="#pasos">Pasos</a>
+      <a href="#alertas">Alertas</a>
+      <a href="#faq">Preguntas</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<?php if ($SITE['sponsor_name']): ?>
+<div class="sponsor" role="region" aria-label="Datos del anunciante">
+  <div class="wrap">
+    <span class="sp-label">Patrocinado por</span>
+    <div class="sp-box">
+      <div><small>Patrocinador</small><strong><?= e($SITE['sponsor_name']) ?></strong></div>
+      <?php if ($SITE['sponsor_id']): ?>
+      <div><small><?= e($SITE['sponsor_id_label']) ?></small><strong><?= e($SITE['sponsor_id']) ?></strong></div>
+      <?php endif; ?>
+    </div>
+    <em><?= e($SITE['sponsor_note']) ?></em>
+  </div>
+</div>
+<?php endif; ?>
+
+<main id="inicio">
+  <section class="hero" aria-labelledby="h1">
+    <div class="wrap">
+      <div>
+        <span class="tag">Guía educativa · Nicaragua</span>
+        <h1 id="h1">Cómo usar Ferretería LAFISE de forma segura y ordenada</h1>
+        <p class="lead">Una guía de orientación para que compre, consulte y conserve sus documentos con criterio. Le explicamos buenas prácticas y cómo reconocer canales oficiales.</p>
+        <p>Esta página solo informa y orienta. Las compras, pagos y reclamos se realizan directamente con la ferretería.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#buenas-practicas">Leer la guía</a>
+          <a class="btn btn-secondary" href="#alertas">Ver señales de fraude</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Aclaración importante">
+        <h2>Lo que debe saber</h2>
+        <ul>
+          <li><strong>No somos Banco LAFISE</strong> ni un banco.</li>
+          <li><strong>No recibimos transferencias</strong> ni ningún tipo de pago.</li>
+          <li>Solo <strong>guiamos y orientamos</strong> sobre el buen uso de Ferretería LAFISE.</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section id="aclaracion" class="alt" aria-labelledby="h-acl">
+    <div class="wrap">
+      <h2 id="h-acl">Qué somos y qué no somos</h2>
+      <p>Somos una guía educativa independiente. No tenemos relación comercial, afiliación ni autorización de LAFISE ni de Ferretería LAFISE, salvo que esta página lo indique expresamente.</p>
+      <div class="table-wrap">
+        <table>
+          <caption class="sr" style="position:absolute;left:-9999px">Funciones de esta guía</caption>
+          <thead><tr><th scope="col">Función</th><th scope="col">¿Lo hacemos?</th></tr></thead>
+          <tbody>
+          <?php foreach ($hacemos as $h): ?>
+            <tr><td><?= e($h[0]) ?></td><td class="<?= $h[1] ? 'yes' : 'no' ?>"><?= $h[1] ? 'Sí' : 'No' ?></td></tr>
+          <?php endforeach; ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="buenas-practicas" aria-labelledby="h-bp">
+    <div class="wrap">
+      <h2 id="h-bp">Buenas prácticas para el cliente</h2>
+      <div class="grid">
+        <?php foreach ($buenas_practicas as $b): ?>
+          <article class="card"><h3><?= e($b[0]) ?></h3><p><?= e($b[1]) ?></p></article>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </section>
+
+  <section id="pasos" class="alt" aria-labelledby="h-pasos">
+    <div class="wrap">
+      <h2 id="h-pasos">Una compra ordenada, paso a paso</h2>
+      <ol class="steps">
+        <?php foreach ($pasos as $p): ?>
+          <li><div><h3><?= e($p[0]) ?></h3><p><?= e($p[1]) ?></p></div></li>
+        <?php endforeach; ?>
+      </ol>
+    </div>
+  </section>
+
+  <section id="alertas" aria-labelledby="h-al">
+    <div class="wrap">
+      <div class="alerts">
+        <h2 id="h-al">Señales de posible fraude</h2>
+        <p>Si nota alguna de estas situaciones, deténgase y verifique por un canal oficial:</p>
+        <ul>
+          <?php foreach ($alertas as $a): ?><li><?= e($a) ?></li><?php endforeach; ?>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="alt" aria-labelledby="h-faq">
+    <div class="wrap">
+      <h2 id="h-faq">Preguntas frecuentes</h2>
+      <?php foreach ($faq as $i => $f): ?>
+        <details<?= $i === 0 ? ' open' : '' ?>>
+          <summary><?= e($f[0]) ?></summary>
+          <div class="ans"><p><?= e($f[1]) ?></p></div>
+        </details>
+      <?php endforeach; ?>
+    </div>
+  </section>
+
+  <section id="contacto" aria-labelledby="h-ct">
+    <div class="wrap">
+      <h2 id="h-ct">Contacto de esta guía</h2>
+      <p>Para dudas sobre el contenido de esta guía. Para compras, pagos o reclamos, comuníquese con Ferretería LAFISE.</p>
+      <?php if ($SITE['contact_email'] || $SITE['contact_phone']): ?>
+        <div class="actions">
+          <?php if ($SITE['contact_email']): ?><a class="btn btn-secondary" href="mailto:<?= e($SITE['contact_email']) ?>">Escribir por correo</a><?php endif; ?>
+          <?php if ($SITE['contact_phone']): ?><a class="btn btn-secondary" href="tel:<?= e($phone_href) ?>">Llamar a la guía</a><?php endif; ?>
+        </div>
+        <p style="margin-top:12px"><small>Por este medio tampoco recibimos pagos.</small></p>
+      <?php else: ?>
+        <p class="pending"><strong>PENDIENTE:</strong> agregue correo, teléfono o WhatsApp de esta guía en <code>$SITE</code>. Este aviso desaparece al completarlos.</p>
+      <?php endif; ?>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer" role="note">
+      <strong>Aviso legal importante:</strong> Este sitio es una guía de orientación independiente. No somos Banco LAFISE, no somos un banco, no somos Ferretería LAFISE y no representamos a ninguna de esas entidades. No recibimos transferencias bancarias ni ningún tipo de pagos, ni efectuamos pagos. Las marcas mencionadas pertenecen a sus respectivos titulares y se citan solo para fines informativos.
+    </div>
+    <h2><?= e($SITE['brand']) ?></h2>
+    <p>Responsable de esta guía: <?= e($SITE['owner_name']) ?></p>
+    <?php if ($SITE['legal_links']): ?>
+      <p><?php foreach ($SITE['legal_links'] as $t => $u): ?><a href="<?= e($u) ?>"><?= e($t) ?></a> &nbsp; <?php endforeach; ?></p>
+    <?php else: ?>
+      <p><small>PENDIENTE: agregar política de privacidad y términos antes de publicar.</small></p>
+    <?php endif; ?>
+    <?php if ($SITE['ads_id'] || $SITE['banner_preview']): ?>
+    <div id="cookies">
+      <h2>Cookies y medición</h2>
+      <p>Solo si usted acepta, esta página carga la etiqueta de Google Ads para medir la efectividad de los anuncios. Si rechaza, no se carga ninguna etiqueta de medición ni publicidad. Su elección se guarda en este navegador y puede cambiarla cuando quiera.</p>
+      <p><button type="button" class="linklike" id="cookie-prefs">Cambiar preferencias de cookies</button></p>
+    </div>
+    <?php endif; ?>
+    <p><small>&copy; <?= date('Y') ?> <?= e($SITE['brand']) ?>. Contenido informativo, sin garantía de resultados.</small></p>
+  </div>
+</footer>
+
+<?php if ($SITE['ads_id'] || $SITE['banner_preview']): ?>
+<div class="cookie" id="cookie-banner" role="dialog" aria-label="Preferencias de privacidad" hidden>
+  <div class="wrap">
+    <p><strong>Preferencias de privacidad.</strong> Si aceptas, usamos cookies de Google Ads para medir la efectividad de nuestros anuncios. Si rechazas, no se carga ninguna etiqueta de medición ni publicidad. <a href="#cookies">Más información</a>.</p>
+    <div class="cookie-actions">
+      <button type="button" class="btn btn-reject" id="cookie-reject">Rechazar</button>
+      <button type="button" class="btn btn-accept" id="cookie-accept">Aceptar</button>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var ADS_ID = <?= json_encode($SITE['ads_id']) ?>;   // vacío = no se carga nada
+  var KEY = 'cookie_consent_v1', loaded = false;
+  var banner = document.getElementById('cookie-banner');
+  function get() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+  function set(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+  function loadAds() {
+    if (loaded || !ADS_ID) return;
+    loaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(ADS_ID);
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', ADS_ID);
+  }
+  document.getElementById('cookie-accept').addEventListener('click', function () {
+    set('accepted'); banner.hidden = true; loadAds();
+  });
+  document.getElementById('cookie-reject').addEventListener('click', function () {
+    set('rejected'); banner.hidden = true;
+    if (loaded) location.reload();   // detiene la etiqueta ya cargada
+  });
+  var prefs = document.getElementById('cookie-prefs');
+  if (prefs) prefs.addEventListener('click', function () { banner.hidden = false; });
+  var saved = get();
+  if (saved === 'accepted') loadAds();
+  else if (saved === null) banner.hidden = false;
+})();
+</script>
+<?php endif; ?>
+
+</body>
+</html>
