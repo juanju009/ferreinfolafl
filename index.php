@@ -4,13 +4,13 @@
    Archivo único: index.php. Requiere PHP 7.4+.
    Edite SOLO el bloque $SITE. Todo valor "PENDIENTE" debe completarse
    con información verificada antes de publicar. Nada aquí es oficial
-   de LAFISE: es una guía informativa independiente.
+   de LAFISE: es una guía educativa independiente.
    ===================================================================== */
 
 $SITE = [
   // --- Identidad (cámbiela por el nombre real de su proyecto) ---
   'brand'       => 'Guía del Cliente Ferretero',          // nombre comercial de ESTA guía
-  'brand_note'  => 'Orientación independiente',
+  'brand_note'  => 'Guía educativa independiente',
   'lang'        => 'es-NI',
   'title'       => 'Guía de orientación sobre el buen uso de Ferretería LAFISE en Nicaragua',
   'description' => 'Guía educativa e independiente para clientes: cómo usar de forma ordenada los servicios de Ferretería LAFISE en Nicaragua. No somos un banco ni recibimos pagos.',
@@ -64,9 +64,69 @@ $pasos = [
   ['Verifique y conserve el comprobante', 'Al recibir o retirar, compare con la factura y guarde todos los documentos.'],
 ];
 
+$calcular = [
+  ['Mida dos veces', 'Tome las medidas del espacio y anótelas con su unidad (metros, centímetros o pulgadas). Un error de medida se repite en toda la compra.'],
+  ['Haga un croquis sencillo', 'Un dibujo a mano con medidas y fotos ayuda al personal de la ferretería a orientarle sobre cantidades y modelos.'],
+  ['Pregunte por el margen de desperdicio', 'Muchos materiales se pierden en cortes o roturas. Consulte cuánto margen conviene para su tipo de trabajo.'],
+  ['Revise las presentaciones', 'Un mismo producto puede venir en distintos tamaños o empaques. Calcule cuál se ajusta mejor a lo que necesita.'],
+  ['Separe lo esencial de lo opcional', 'Decidir qué es imprescindible le permite ajustar el presupuesto y comprar por etapas si hace falta.'],
+];
+
+$leer_proforma = [
+  ['Descripción del producto', 'Nombre, marca, referencia y características (medida, grosor, material). Compárela con lo que usted anotó.'],
+  ['Cantidad y unidad de medida', 'Confirme si se cotiza por pieza, metro, libra, saco, caja u otra unidad. Una unidad distinta cambia el total.'],
+  ['Precio unitario y subtotal', 'Compruebe que la cantidad multiplicada por el precio unitario coincida con el subtotal de cada línea.'],
+  ['Impuestos y descuentos', 'Observe si el precio ya incluye impuestos y cómo se aplica cualquier descuento.'],
+  ['Vigencia de la proforma', 'Pregunte hasta cuándo es válida. Precios y existencias pueden cambiar pasado ese tiempo.'],
+  ['Entrega o retiro', 'Revise fechas, lugar, si hay costo de transporte y quién se encarga de la descarga.'],
+];
+
+$uso_responsable = [
+  ['Lea las instrucciones y advertencias', 'Antes de usar una herramienta, pintura, adhesivo o producto químico, lea la etiqueta y el manual del fabricante.'],
+  ['Use equipo de protección', 'Guantes, lentes o mascarilla según el trabajo. Pregunte qué protección corresponde al producto que lleva.'],
+  ['Elija la herramienta adecuada', 'Cada herramienta tiene un uso previsto. Si duda cuál necesita, pida orientación antes de comprar.'],
+  ['No mezcle productos', 'No combine productos químicos entre sí, salvo que el fabricante lo indique expresamente.'],
+  ['Almacene con orden', 'Guarde materiales y herramientas en un lugar seco, ordenado y fuera del alcance de los niños.'],
+  ['Consulte a un profesional cuando corresponda', 'Para trabajos eléctricos, de gas o estructurales, acuda a una persona calificada.'],
+];
+
+$preguntas_garantia = [
+  '¿Este producto tiene garantía? ¿De cuánto tiempo y qué cubre?',
+  '¿Puedo cambiarlo si la medida o el modelo no me sirve? ¿En qué plazo y con qué documentos?',
+  '¿Los productos cortados a medida o ya abiertos admiten cambio?',
+  '¿Dónde y cómo se presenta un reclamo de garantía?',
+  '¿Debo conservar el empaque original?',
+];
+
+$lista_antes = [
+  'Anoté qué necesito, con medidas y cantidades',
+  'Definí un presupuesto aproximado',
+  'Llevo un croquis o fotos del espacio o del repuesto',
+  'Tengo claras mis preguntas sobre garantía y cambios',
+  'Sé por qué canal comunicarme con la ferretería',
+];
+
+$lista_despues = [
+  'Comprobé que lo recibido coincide con la factura',
+  'Guardé la factura y los documentos de garantía',
+  'Leí las instrucciones de uso de cada producto',
+  'Almacené los materiales de forma ordenada',
+  'Anoté lo que aprendí para mi próxima compra',
+];
+
+$glosario = [
+  ['Cotización o proforma', 'Documento con precios y condiciones de una posible compra. No es una factura ni confirma por sí solo la compra.'],
+  ['Factura', 'Comprobante de la compra realizada. Guárdela: suele ser necesaria para garantías y cambios.'],
+  ['Garantía', 'Respaldo sobre un producto durante un tiempo y bajo condiciones que define quien lo vende o fabrica.'],
+  ['Existencias', 'Cantidad de un producto disponible para entrega o retiro.'],
+  ['Unidad de medida', 'Forma en que se vende un producto: por pieza, metro, libra, saco, galón, caja, etc.'],
+  ['Presentación', 'Tamaño o empaque en que viene un producto, por ejemplo galón o cuarto de galón.'],
+  ['Referencia o código', 'Identificador de un producto que ayuda a pedir exactamente el modelo que necesita.'],
+];
+
 $faq = [
   ['¿Para qué sirve esta guía?', 'Para orientarle sobre cómo preparar y organizar su compra o consulta en Ferretería LAFISE: qué preguntar, qué documentos guardar y qué revisar antes de aceptar un pedido.'],
-  ['¿Esta página es del banco LAFISE o de Ferretería LAFISE?', 'No. Esta es una guía informativa independiente. No somos Banco LAFISE, no somos un banco y no somos la ferretería. No existe afiliación, patrocinio ni autorización de LAFISE, salvo que se indique expresamente lo contrario en esta página.'],
+  ['¿Esta página es del banco LAFISE o de Ferretería LAFISE?', 'No. Esta es una guía educativa de orientación independiente. No somos Banco LAFISE, no somos un banco y no somos la ferretería. No existe afiliación, patrocinio ni autorización de LAFISE, salvo que se indique expresamente lo contrario en esta página.'],
   ['¿Puedo pagar o hacer una transferencia a través de esta página?', 'No. No recibimos pagos, transferencias bancarias ni dinero de ningún tipo.'],
   ['¿Puedo hacer pedidos o compras aquí?', 'No. Para comprar, cotizar o reclamar debe comunicarse directamente con Ferretería LAFISE.'],
   ['¿Dónde encuentro los datos de atención de la ferretería?', 'En los medios de atención de la propia empresa. Esta guía no los administra.'],
@@ -75,6 +135,8 @@ $faq = [
 
 /* ---------- Utilidades ---------- */
 function e($s) { return htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8'); }
+function cards($items) { foreach ($items as $i) { echo '<article class="card"><h3>' . e($i[0]) . '</h3><p>' . e($i[1]) . '</p></article>'; } }
+function checks($items) { echo '<ul class="checklist">'; foreach ($items as $i) { echo '<li><label><input type="checkbox"> <span>' . e($i) . '</span></label></li>'; } echo '</ul>'; }
 $c = $SITE['colors'];
 $phone_href = preg_replace('/[^0-9+]/', '', $SITE['contact_phone']);
 ?>
@@ -180,6 +242,19 @@ details .ans{padding:16px 18px 4px}
 /* Contacto */
 .pending{background:#FFF8DB;border:1px dashed #A07A00;padding:14px;border-radius:var(--r);font-size:.95rem}
 
+/* Contenido educativo */
+.checklist{list-style:none;margin:0;padding:0}
+.checklist li{margin-bottom:10px}
+.checklist label{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.checklist input{width:20px;height:20px;margin-top:3px;accent-color:var(--steel);flex:none}
+.panel{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.panel h3{margin-bottom:12px}
+.qlist{margin:0;padding-left:20px}.qlist li{margin-bottom:8px}
+.glos{display:grid;gap:12px;margin:0}
+.glos div{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:14px 18px}
+.glos dt{font-weight:700;color:var(--steel)}.glos dd{margin:4px 0 0}
+.hint{font-size:.92rem;color:#4C5C66}
+
 /* Patrocinador */
 .sponsor{background:var(--white);border-bottom:1px solid var(--line)}
 .sponsor .wrap{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;padding-top:14px;padding-bottom:14px}
@@ -222,7 +297,7 @@ footer h2{color:var(--white);font-size:1.1rem}
 <body>
 
 <div class="notice" role="note">
-  <div class="wrap"><strong>Aviso:</strong> Esta es una guía informativa independiente. No somos Banco LAFISE ni un banco, y no recibimos pagos ni transferencias.</div>
+  <div class="wrap"><strong>Aviso:</strong> Esta es una guía educativa de orientación independiente. No somos Banco LAFISE ni un banco, y no recibimos pagos ni transferencias.</div>
 </div>
 
 <header class="site-header">
@@ -232,6 +307,9 @@ footer h2{color:var(--white);font-size:1.1rem}
       <a href="#aclaracion">Quiénes somos</a>
       <a href="#buenas-practicas">Buenas prácticas</a>
       <a href="#pasos">Pasos</a>
+      <a href="#proforma">Proforma</a>
+      <a href="#lista">Lista</a>
+      <a href="#glosario">Glosario</a>
       <a href="#faq">Preguntas</a>
       <a href="#contacto">Contacto</a>
     </nav>
@@ -260,7 +338,7 @@ footer h2{color:var(--white);font-size:1.1rem}
         <span class="tag">Guía educativa · Nicaragua</span>
         <h1 id="h1">Cómo usar Ferretería LAFISE de forma ordenada y sencilla</h1>
         <p class="lead">Una guía de orientación para que compre, consulte y conserve sus documentos con orden. Le explicamos buenas prácticas de uso paso a paso.</p>
-        <p>Esta página solo informa y orienta. Las compras, pagos y reclamos se realizan directamente con la ferretería.</p>
+        <p>Esta página solo educa y orienta. Las compras, pagos y reclamos se realizan directamente con la ferretería.</p>
         <div class="actions">
           <a class="btn btn-primary" href="#buenas-practicas">Leer la guía</a>
           <a class="btn btn-secondary" href="#pasos">Ver los pasos</a>
@@ -268,7 +346,7 @@ footer h2{color:var(--white);font-size:1.1rem}
       </div>
       <aside class="hero-card" aria-label="Aclaración importante">
         <h2>Lo que esta guía es y lo que no es</h2>
-        <p style="margin:0">Esta guía ofrece información educativa y consejos de uso, y orienta sobre cómo acudir a Ferretería LAFISE. <strong>No somos Banco LAFISE Nicaragua</strong> ni un banco, <strong>no recibimos ni hacemos pagos o transferencias</strong>, y <strong>nunca pedimos claves, PIN, tarjetas ni datos bancarios</strong>.</p>
+        <p style="margin:0">Esta guía ofrece contenido educativo y consejos de uso, y orienta sobre cómo acudir a Ferretería LAFISE. <strong>No somos Banco LAFISE Nicaragua</strong> ni un banco, <strong>no recibimos ni hacemos pagos o transferencias</strong>, y <strong>nunca pedimos claves, PIN, tarjetas ni datos bancarios</strong>.</p>
       </aside>
     </div>
   </section>
@@ -302,7 +380,61 @@ footer h2{color:var(--white);font-size:1.1rem}
     </div>
   </section>
 
-  <section id="faq" class="alt" aria-labelledby="h-faq">
+  <section id="calcular" aria-labelledby="h-calc">
+    <div class="wrap">
+      <h2 id="h-calc">Cómo calcular lo que necesita</h2>
+      <p>Comprar bien empieza antes de llegar a la ferretería. Estas ideas le enseñan a pedir lo correcto y a evitar viajes o gastos repetidos.</p>
+      <div class="grid"><?php cards($calcular); ?></div>
+    </div>
+  </section>
+
+  <section id="proforma" class="alt" aria-labelledby="h-prof">
+    <div class="wrap">
+      <h2 id="h-prof">Aprenda a leer una proforma</h2>
+      <p>Una proforma bien entendida evita sorpresas. Estos son los puntos que conviene revisar línea por línea.</p>
+      <div class="grid"><?php cards($leer_proforma); ?></div>
+    </div>
+  </section>
+
+  <section id="uso" aria-labelledby="h-uso">
+    <div class="wrap">
+      <h2 id="h-uso">Uso responsable de herramientas y materiales</h2>
+      <p>Usar bien lo que compra protege su trabajo y a las personas a su alrededor. Siga siempre las instrucciones del fabricante.</p>
+      <div class="grid"><?php cards($uso_responsable); ?></div>
+    </div>
+  </section>
+
+  <section id="garantia" class="alt" aria-labelledby="h-gar">
+    <div class="wrap">
+      <h2 id="h-gar">Preguntas útiles sobre cambios y garantías</h2>
+      <p>Las condiciones las define la ferretería, no esta guía. Estas preguntas le ayudan a conocerlas antes de pagar.</p>
+      <div class="panel"><ul class="qlist"><?php foreach ($preguntas_garantia as $q): ?><li><?= e($q) ?></li><?php endforeach; ?></ul></div>
+    </div>
+  </section>
+
+  <section id="lista" aria-labelledby="h-lista">
+    <div class="wrap">
+      <h2 id="h-lista">Lista de verificación</h2>
+      <p class="hint">Marque a medida que avanza. Las marcas no se guardan: si recarga la página, se borran.</p>
+      <div class="grid">
+        <div class="panel"><h3>Antes de ir</h3><?php checks($lista_antes); ?></div>
+        <div class="panel"><h3>Después de comprar</h3><?php checks($lista_despues); ?></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="glosario" class="alt" aria-labelledby="h-glos">
+    <div class="wrap">
+      <h2 id="h-glos">Glosario sencillo</h2>
+      <dl class="glos">
+        <?php foreach ($glosario as $g): ?>
+          <div><dt><?= e($g[0]) ?></dt><dd><?= e($g[1]) ?></dd></div>
+        <?php endforeach; ?>
+      </dl>
+    </div>
+  </section>
+
+  <section id="faq" aria-labelledby="h-faq">
     <div class="wrap">
       <h2 id="h-faq">Preguntas frecuentes</h2>
       <?php foreach ($faq as $i => $f): ?>
@@ -314,7 +446,7 @@ footer h2{color:var(--white);font-size:1.1rem}
     </div>
   </section>
 
-  <section id="contacto" aria-labelledby="h-ct">
+  <section id="contacto" class="alt" aria-labelledby="h-ct">
     <div class="wrap">
       <h2 id="h-ct">Contacto de esta guía</h2>
       <p>Para dudas sobre el contenido de esta guía. Para compras, pagos o reclamos, comuníquese con Ferretería LAFISE.</p>
@@ -334,7 +466,7 @@ footer h2{color:var(--white);font-size:1.1rem}
 <footer>
   <div class="wrap">
     <div class="disclaimer" role="note">
-      <strong>Aviso legal importante:</strong> Este sitio es una guía de orientación independiente. No somos Banco LAFISE, no somos un banco, no somos Ferretería LAFISE y no representamos a ninguna de esas entidades. No recibimos transferencias bancarias ni ningún tipo de pagos, ni efectuamos pagos. Las marcas mencionadas pertenecen a sus respectivos titulares y se citan solo para fines informativos.
+      <strong>Aviso legal importante:</strong> Este sitio es una guía de orientación independiente. No somos Banco LAFISE, no somos un banco, no somos Ferretería LAFISE y no representamos a ninguna de esas entidades. No recibimos transferencias bancarias ni ningún tipo de pagos, ni efectuamos pagos. Las marcas mencionadas pertenecen a sus respectivos titulares y se citan solo con fines educativos y de referencia.
     </div>
     <h2><?= e($SITE['brand']) ?></h2>
     <p>Responsable de esta guía: <?= e($SITE['owner_name']) ?></p>
@@ -350,7 +482,7 @@ footer h2{color:var(--white);font-size:1.1rem}
       <p><button type="button" class="linklike" id="cookie-prefs">Cambiar preferencias de cookies</button></p>
     </div>
     <?php endif; ?>
-    <p><small>&copy; <?= date('Y') ?> <?= e($SITE['brand']) ?>. Contenido informativo, sin garantía de resultados.</small></p>
+    <p><small>&copy; <?= date('Y') ?> <?= e($SITE['brand']) ?>. Contenido educativo, sin garantía de resultados.</small></p>
   </div>
 </footer>
 
