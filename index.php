@@ -40,8 +40,9 @@ $SITE = [
   'sponsor_note'   => 'Contenido educativo independiente',
 
   // --- Medición con Google Ads (solo se carga si el visitante pulsa ACEPTAR) ---
+  'gtm_id'         => 'GTM-5PDWFKC2',   // Google Tag Manager. Se carga SOLO si el visitante pulsa ACEPTAR.
   'ads_id'         => '',   // PENDIENTE: su ID de Google Ads (formato AW-XXXXXXXXX). Vacío = no se carga nada.
-  // Mientras 'ads_id' esté vacío, el banner solo sirve de vista previa (no carga ni guarda cookies de Google).
+  // Mientras 'gtm_id' y 'ads_id' estén vacíos, el banner solo sirve de vista previa (no carga ni guarda cookies de Google).
   // Ponga false para publicar: así el banner no aparecerá si no hay medición real.
   'banner_preview' => true,
 ];
@@ -475,10 +476,10 @@ footer h2{color:var(--white);font-size:1.1rem}
     <?php else: ?>
       <p><small>PENDIENTE: agregar política de privacidad y términos antes de publicar.</small></p>
     <?php endif; ?>
-    <?php if ($SITE['ads_id'] || $SITE['banner_preview']): ?>
+    <?php if ($SITE['gtm_id'] || $SITE['ads_id'] || $SITE['banner_preview']): ?>
     <div id="cookies">
       <h2>Cookies y medición</h2>
-      <p>Solo si usted acepta, esta página carga la etiqueta de Google Ads para medir la efectividad de los anuncios. Si rechaza, no se carga ninguna etiqueta de medición ni publicidad. Su elección se guarda en este navegador y puede cambiarla cuando quiera.</p>
+      <p>Solo si usted acepta, esta página carga Google Tag Manager y las etiquetas de medición de Google Ads que tenga configuradas, para medir la efectividad de los anuncios. Si rechaza, no se carga ninguna etiqueta de medición ni publicidad. Su elección se guarda en este navegador y puede cambiarla cuando quiera.</p>
       <p><button type="button" class="linklike" id="cookie-prefs">Cambiar preferencias de cookies</button></p>
     </div>
     <?php endif; ?>
@@ -486,7 +487,7 @@ footer h2{color:var(--white);font-size:1.1rem}
   </div>
 </footer>
 
-<?php if ($SITE['ads_id'] || $SITE['banner_preview']): ?>
+<?php if ($SITE['gtm_id'] || $SITE['ads_id'] || $SITE['banner_preview']): ?>
 <div class="cookie" id="cookie-banner" role="dialog" aria-label="Preferencias de privacidad" hidden>
   <div class="wrap">
     <p><strong>Preferencias de privacidad.</strong> Si aceptas, usamos cookies de Google Ads para medir la efectividad de nuestros anuncios. Si rechazas, no se carga ninguna etiqueta de medición ni publicidad. <a href="#cookies">Más información</a>.</p>
@@ -498,22 +499,30 @@ footer h2{color:var(--white);font-size:1.1rem}
 </div>
 <script>
 (function () {
-  var ADS_ID = <?= json_encode($SITE['ads_id']) ?>;   // vacío = no se carga nada
+  var GTM_ID = <?= json_encode($SITE['gtm_id']) ?>;   // Google Tag Manager (prioridad)
+  var ADS_ID = <?= json_encode($SITE['ads_id']) ?>;   // gtag.js directo, solo si no hay GTM
+  // Si ambos están vacíos, no se carga nada.
   var KEY = 'cookie_consent_v1', loaded = false;
   var banner = document.getElementById('cookie-banner');
   function get() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
   function set(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
   function loadAds() {
-    if (loaded || !ADS_ID) return;
+    if (loaded || !(GTM_ID || ADS_ID)) return;
     loaded = true;
+    window.dataLayer = window.dataLayer || [];
     var s = document.createElement('script');
     s.async = true;
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(ADS_ID);
-    document.head.appendChild(s);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { dataLayer.push(arguments); };
-    gtag('js', new Date());
-    gtag('config', ADS_ID);
+    if (GTM_ID) {
+      dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      s.src = 'https://www.googletagmanager.com/gtm.js?id=' + encodeURIComponent(GTM_ID);
+      document.head.appendChild(s);
+    } else {
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(ADS_ID);
+      document.head.appendChild(s);
+      window.gtag = function () { dataLayer.push(arguments); };
+      gtag('js', new Date());
+      gtag('config', ADS_ID);
+    }
   }
   document.getElementById('cookie-accept').addEventListener('click', function () {
     set('accepted'); banner.hidden = true; loadAds();
